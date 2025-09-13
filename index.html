@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>株式会社マークプラス</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+        <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" async></script>
+    </head>
+<body>
+
+    <header id="header" class="wrapper">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="img/markplus-top-bar.png" alt="マークプラス">
+            </a>
+        </h1>
+        <nav class="navi">
+            <li><a href="#data">Data</a></li>
+            <li><a href="#training">Training</a></li>
+        </nav>
+    </header>
+
+    <main class="wrapper">
+
+      <div class="mainvisual" style="position: relative;">
+            <div id="map" style="height: 70vh;"></div>
+
+                <div id="layerControl-1" class="layerControl">
+                  <div>
+                    <input type="radio" class="raster" name="raster" value="osm-layer" id="osm-layer" checked>
+                    <label for="osm-layer">OpenStreetMap</label>
+                  </div>
+                  <div>
+                    <input type="radio" class="raster" name="raster" value="photo-layer" id="photo-layer">
+                    <label for="photo-layer">地理院航空写真</label>
+                  </div>
+                </div>
+
+
+                <div id="layerControl-2" class="layerControl">
+                  <div>
+                    <input type="radio" class="vector" name="vector" value="point-layer" id="point-layer" checked>
+                    <label for="point-layer">座標データ</label>
+                  </div>
+                  <div>
+                    <input type="radio" class="vector" name="vector" value="polygon-layer" id="polygon-layer">
+                    <label for="osm-layer">地番データ</label>
+                  </div>
+                </div>
+
+      </div>
+
+      <div class="introduction">
+        <p class="catchphrase">測量で得た地理空間情報を活用する</p>
+        <p class="text">マークプラスは、測量するだけではなく、地理空間情報としてGISソフトで扱えるデータとして提供しています。<br>
+        地理空間情報を積極的に活かしてみませんか？</p>
+      </div>
+
+      <section id="data">
+        <div class="detail">
+          <h2 class="section-title">
+            <span class="ja">自己紹介</span>
+          </h2>
+          <p>令和５年１月２３日。<br>
+          土地や建物の調査・測量だけでなく、GISの勉強についても発信していこうと思います。(勉強日記)</p>
+      
+        </div>
+      </section>
+
+      <section id="works">
+        <h2 class="section-title">
+          <span class="ja">成果ファイル一覧</span>
+        </h2>
+
+        <ul class="works-list">
+          <li><a href="./point.geojson">KMLファイルをダウンロード</a><img src="img/kml.png" alt=""></li>
+          <li><img src="img/works2.jpg" alt="">GeoJsonファイルをダウンロード</li>
+          <li><img src="img/works3.jpg" alt=""></li>
+          <li><img src="img/works4.jpg" alt=""></li>
+          <li><img src="img/works5.jpg" alt=""></li>
+          <li><img src="img/icons8-kml-100.png" alt=""></li>
+        </ul>
+      </section>
+
+    <footer id="footer" class="wrapper">
+      <p class="copyright">© マークプラス</p>
+    </footer>
+
+</body>
+</html>

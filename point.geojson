@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "point",
+"features": [
+{ "type": "Feature", "properties": { "CONAME": "R1T019", "COY": "-15626.487", "COX": "-13690.261", "CONOTE1": "４級基準点", "CONOTE2": "鋲" }, "geometry": { "type": "Point", "coordinates": [ 139.660273132714792, 35.876480473146501 ] } }
+]
+}
