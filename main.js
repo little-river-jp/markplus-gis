@@ -2,7 +2,7 @@
     const map = new maplibregl.Map({
         container: 'map',
         center: [139.660344139425916, 35.876171956184599],
-        zoom:16,
+        zoom:18,
         style: {
             version: 8,
             glyphs: './fonts/{fontstack}/{range}.pbf', 
@@ -65,47 +65,8 @@
                     },
                 },
 
-                {
-                    id: 'polygon-layer',
-                    source: 'polygon',
-                    type: 'fill',
-                    paint: {
-                        'fill-color': '#FF0000',
-                        'fill-opacity': 0.2,
-                        'fill-outline-color' : 'blue',
-                    },
-                    layout: {visibility: 'none',},
-                },
 
-
-                {
-                    id: 'polygon-label-layer', // 地番データを表示するレイヤー
-                    source: 'polygon',
-                    type: 'symbol', // フォントはsymbolとして表示する
-                    minzoom: 12,
-                    layout: {
-                        'text-field': ['get', "GRNAME"], // GRNAME=地番
-                        'text-offset': [0, 0.5], // フォントの位置調整
-                        'text-anchor': 'top', // フォントの位置調整
-                        'text-font': ['Noto Sans CJK JP Bold'], // glyphsのフォントデータに含まれるフォントを指定
-                        'text-size': [
-                            'interpolate',
-                            ['linear'],
-                            ['zoom'],
-                            10, // ズームレベル10のときに
-                            8, // フォントサイズ8
-                            14, // ズームレベル14のときに
-                            14, // フォントサイズ14
-                        ],
-                        visibility: 'none',
-                    },
-                    paint: {
-                        'text-halo-width': 1,
-                        'text-halo-color': '#fff',
-                    },
-                },
-
-                {
+                                {
                     id: 'point-label-layer', // 学校名を表示するレイヤー
                     source: 'point',
                     type: 'symbol', // フォントはsymbolとして表示する
@@ -131,6 +92,47 @@
                         'text-halo-color': '#fff',
                     },
                 },
+
+                {
+                    id: 'polygon-layer',
+                    source: 'polygon',
+                    type: 'fill',
+                    paint: {
+                        'fill-color': '#FF0000',
+                        'fill-opacity': 0.2,
+                        'fill-outline-color' : 'blue',
+                    },
+                    layout: {visibility: 'none',},
+                },
+
+
+                {
+                    id: 'polygon-label-layer', // 地番データを表示するレイヤー
+                    source: 'polygon',
+                    type: 'symbol',
+                    minzoom: 12,
+                    layout: {
+                        'text-field': ['get', "GRNAME"], // GRNAME=地番
+                        'text-offset': [0, 0], // フォントの位置調整
+                        'text-anchor': 'center', // フォントの位置調整
+                        'text-font': ['Noto Sans CJK JP Bold'], // glyphsのフォントデータに含まれるフォントを指定
+                        'text-size': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            10, // ズームレベル10のときに
+                            8, // フォントサイズ8
+                            14, // ズームレベル14のときに
+                            14, // フォントサイズ14
+                        ],
+                        visibility: 'none',
+                    },
+                    paint: {
+                        'text-halo-width': 1,
+                        'text-halo-color': '#fff',
+                    },
+                },
+
             ],
         },
     });
